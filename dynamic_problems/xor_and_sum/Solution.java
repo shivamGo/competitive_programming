@@ -1,3 +1,4 @@
+package dynamic_problems.xor_and_sum;
 import java.io.*;
 import java.util.*;
 
