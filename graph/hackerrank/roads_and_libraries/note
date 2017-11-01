@@ -1,0 +1,12 @@
+After the tornado destroys India, Government wants to establish new map.
+
+Suppose there are 3 states(connected components) in India.
+1. state - 1 has 4 cities.
+2. state - 2 has 2 cities.
+3. state - 3 has 1 city.
+
+SHIVAM want to help India government to develop the country in minimum cost since every city wants the library so that cost of library and cost road has been given. Therefore Shivam has to find out whether build a library in the city itself or connect that city with another city which already has the library.
+
+Solution: DFS algorithm.
+
+Because there are 3 connected components each component must contain at least 1 library we can use DFS algorithm to find out connected components and then check forming road between city will cause minimum cost or making the library in the city.  for that following expression will help = (V - reqLibrary) * Math.min(libCost, roadCost);

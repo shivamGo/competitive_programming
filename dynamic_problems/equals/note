@@ -1,0 +1,9 @@
+Lord Shiva solved that problem after 10-year meditation.
+Because He had done 10 years of meditation, he became the highly intelligent person. He modified entire problem.
+
+Problem: Read from Hackerrank.
+
+Solution: Lady asked for help to Shiva. Shiva modified problem he said OK We would take back all the chocolates by doing minimum operations.
+
+He found a person who had minimum chocolates suppose min variable contains no of minimum chocolates then he vanished min number of chocolates from everyone's pocket and start performing greedy approach n / 5 + n % 5 / 2 + n % 5 % 2;
+After reaching the final solution, he realized there would be the small mistake. Because he is highly intelligent immediately found the right solution by just performing min-- 5 times.

@@ -5,53 +5,52 @@ import sun.awt.image.ImageWatched;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
+import java.util.*;
 
-public class Solution {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int t = scanner.nextInt();
+public class Solution{
+    static Vertex[] graph;
+    static boolean isVisited[];
+    public static void main(String[]args){
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
         while(t-- > 0){
-            int n = scanner.nextInt();
-            int e = scanner.nextInt();
-            int libCost = scanner.nextInt();
-            int roadCost = scanner.nextInt();
-            LinkedList<Integer>[] graph = new LinkedList[n];
-            for(int i = 0; i < n; i++){
-                graph[i] = new LinkedList<>();
-            }
-            for(int i = 0; i < e; i++){
-                int u = scanner.nextInt() - 1;
-                int v = scanner.nextInt() - 1;
-                graph[u].add(v);
-                graph[v].add(u);
+            int V = in.nextInt();
+            int E = in.nextInt();
+            long libCost = in.nextLong();
+            long roadCost = in.nextLong();
+            graph = new Vertex[V + 1];
+            isVisited = new boolean[V + 1];
+            for(int i = 1; i <= V; i++){
+                graph[i] = new Vertex();
             }
 
-            int res = bfs(graph, 0, libCost, roadCost);
-            System.out.println(res);
-        }
-    }
-
-    public static int bfs(LinkedList<Integer>[] graph, int s, int libCost, int roadCost){
-        boolean[] isVisited = new boolean[graph.length];
-        Queue<Integer> queue = new LinkedList<>();
-        queue.add(s);
-        isVisited[s] = true;
-        int roadCount = 0;
-        while (!queue.isEmpty()){
-            int u = queue.remove();
-            LinkedList<Integer> adj = graph[u];
-            for(int v : adj){
-                if(!isVisited[v]){
-                    isVisited[v] = true;
-                    queue.offer(v);
-                    roadCount++;
+            for(int i = 1; i <= E; i++){
+                int u = in.nextInt();
+                int v = in.nextInt();
+                graph[u].adj.add(v);
+                graph[v].adj.add(u);
+            }
+            int necessaryLibCount = 0;
+            for(int i = 1; i <= V; i++){
+                if(!isVisited[i]){
+                    necessaryLibCount++;
+                    dfs(i);
                 }
             }
-        }
-        if(libCost > roadCost){
-            return libCost + roadCount * roadCost;
-        }else{
-            return graph.length * libCost;
+            System.out.println(necessaryLibCount * libCost + (V - necessaryLibCount) * Math.min(libCost, roadCost));
         }
     }
+
+    private static void dfs(int s){
+        isVisited[s] = true;
+        for(int v : graph[s].adj){
+            if(!isVisited[v]){
+                dfs(v);
+            }
+        }
+    }
+}
+
+class Vertex{
+    public List<Integer> adj = new LinkedList<>();
 }

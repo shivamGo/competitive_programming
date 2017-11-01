@@ -7,9 +7,6 @@ public class Solution {
     private static Reader in = new Reader();
     private static PrintWriter out = new PrintWriter(new BufferedOutputStream(System.out));
 
-    private static void solve() throws Exception {
-    }
-
     public static void main(String[] args) throws Exception {
         int[] arr = {1,2,3};
         List<HashSet<Integer>> powerSets = powerSet(arr);

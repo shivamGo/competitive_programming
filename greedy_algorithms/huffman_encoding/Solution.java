@@ -1,5 +1,8 @@
-package huffman_coding;
+package greedy_algorithms.huffman_encoding;
 
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
 import sun.reflect.generics.tree.Tree;
 import java.util.*;
 import java.util.function.BinaryOperator;
@@ -32,7 +35,6 @@ public class Solution {
     }
 
     public static void inorder(TreeNode root, HashMap<Character, String> map, String code){
-
         if(root == null)
             return;
         if(root != null){

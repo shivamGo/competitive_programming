@@ -1,4 +1,4 @@
-package egg_dropping_problem;
+package dynamic_problems.egg_dropping_problem;
 
 import java.util.Scanner;
 

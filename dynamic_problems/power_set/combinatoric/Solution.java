@@ -21,7 +21,6 @@ public class Solution {
     }
 
     public static ArrayList<ArrayList<Integer>> getPowerSet(int[] nums){
-
         int max = 1 << nums.length;
         ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
         for(int i = 0; i < max; i++){

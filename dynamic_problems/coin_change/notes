@@ -1,0 +1,20 @@
+Let me write the solution of this problem.
+
+Suppose, There is a Krishna on a shop. He had 3 bowls in front of him the first bowl contains infinite coins of 1, the second bowl contains infinite coins of 2 and the third one contains an infinite number of coin 3 and someone came to him and asked him all possible ways of changing 10Rs. Note.
+Krishna was very good in dynamic programming he has broken down that problem into smaller problems.
+1. First, he had to find out all possible ways of changing 1Rs. note and learn it.
+2. Second, he had to find out all possible ways of changing 2Rs 1 + 1(already knew).
+....
+...
+..
+
+10. Now, he could tell him there is dp[10] number of ways to change a 10Rs note.
+
+Although, Customer was smart enough. Now, he told him in this solution you considered 1-way multiple times.
+
+
+Krishna it's masti time.
+Immediately change his solution.
+
+Now he first finds out all possible ways of changing 1..N Rs. by using only coins[1].
+and then he finds out all possible ways of changing 1..N Rs by using coin[1] which he already knew, therefore, he would have to find out all possible ways of changing notes using coin[2] and use previous result DONE.
