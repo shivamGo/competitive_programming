@@ -15,11 +15,12 @@ public class Solution {
         out.flush();
     }
 
-    //Inverse Multiplication Modulo.
+
     public static int pow(int n, int a){
         return new Double(Math.pow(n, a)).intValue();
     }
 
+    //MMI
     public static int modInverse(int a, int m)
     {
         int m0 = m, t, q;
