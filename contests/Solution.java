@@ -15,7 +15,7 @@ public class Solution {
         out.flush();
     }
 
-    //Inverse Multiplication Modulo
+    //Inverse Multiplication Modulo.
     public static int pow(int n, int a){
         return new Double(Math.pow(n, a)).intValue();
     }
